@@ -1,3 +1,7 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
 ##############################################################################
 # Content
 ##############################################################################
@@ -5,7 +9,7 @@
 # Link to a page that gives an overview of all your projects.
 # This can be an external link (e.g., to you GitHub profile) or to another
 # page within your website.
-projects_url: http://github.com/probberechts
+projects_url: http://github.com/effendiian
 
 # Set the page direction to RTL or LTR. default is LTR. (if you set it 'rtl', the 'vazir' font will be loaded.)
 direction: ltr
@@ -14,11 +18,11 @@ direction: ltr
 # navigation menu. Optionally, you can add translations for the 'Key' in
 # languages/*.yml
 nav:
-  home: /
-  about: /about/
-  articles: /archives/
-  projects: http://github.com/probberechts
-
+  Home: /
+  About: /about
+  Blog: /blog/
+  Archive: /archives/
+  Projects: http://github.com/effendiian
 
 # Links to your social media accounts.
 # The 'icon' keys should correspond to Fontawesome icon names
@@ -29,24 +33,23 @@ nav:
 social_links:
   -
     icon: github
-    link: http://github.com/probberechts/cactus-dark
+    link: http://github.com/effendiian
   -
     icon: twitter
     link: /
   -
     icon: facebook
-    link: /
+    link: https://www.facebook.com/effendiian
+  -
+    icon: linkedin
+    link: http://linkedin.com/in/effendiian
   -
     icon: mail
-    link: mailto:name@email.com
+    link: mailto:effendiian@gmail.com
   -
     icon: mastodon
-    label: mastodon.social
-    link: https://mastodon.social/@alice
-  -
-    icon: mastodon
-    label: fosstodon.org
-    link: https://fosstodon.org/@alice
+    label: masto.nyc
+    link: https://masto.nyc/@effendiian
 
 # Customize the overview with displaying a tagcloud on the index page.
 # Options: https://hexo.io/docs/helpers.html#tagcloud
@@ -70,7 +73,7 @@ posts_overview:
 archive:
   sort_updated: false
 
-# Customize the article view.
+# Customize the post view.
 # Options:
 #   - show_updated: show the last modification date.
 post:
@@ -107,8 +110,8 @@ logo:
   enabled: true
   width: 50
   height: 50
-  url: /images/logo.png
-  gravatar: false
+  # url: /images/logo.png
+  gravatar: true
   grayout: true
 
 # Customize the favicons.
@@ -149,7 +152,7 @@ page_width: 48
 ##############################################################################
 
 # Enable or disable the RSS feed.
-rss: false
+rss:
 
 # Turn your web pages into graph objects (see http://ogp.me).
 open_graph:
@@ -181,24 +184,25 @@ utterances:
   theme: github-dark
 
 # Fill in your Google Analytics tracking ID to enable Google Analytics.
-google_analytics:
-  enabled: false
-  id: UA-86660611-1
+# google_analytics:
+#  enabled: false
+#  id: UA-86660611-1
 
 # Fill in your Baidu Analytics tracking ID to enable Baidu Analytics.
-baidu_analytics:
-  enabled: false
-  id: 2e6da3c375c8a87f5b664cea6d4cb29c
+# baidu_analytics:
+#  enabled: false
+#  id: 2e6da3c375c8a87f5b664cea6d4cb29c
 
 # Fill in your Cloudflare Analytics tracking ID to enable Cloudflare Analytics.
 cloudflare_analytics:
   enabled: false
   id: 0dabb6e21848405483a237e6a7b6ed04
+      00000000000000000000000000000000
 
 # Fill in your Umami Analytics tracking ID to enable Umami Analytics.
 umami_analytics:
   enabled: false
-  id: e77e68be-f6e4-4br3-9365-2b76b57cd571
+  id: 00000000-0000-0000-0000-000000000000
   host: https://analytics.domain.com
   script_name: umami.js
 
@@ -206,8 +210,8 @@ umami_analytics:
 # logo and/or favicons of you website.
 # To generate hash: `$ echo -n "name@email.com" | md5`.
 gravatar:
-  email: name@email.com
-  hash: d41d8cd98f00b204e9800998ecf8427e
+  email: effendiian+github@email.com
+  hash: 5de94d4da5419467f22c2c39cc2e435b
 
 # loads libraries and styles from CDN instead or relying on local files
 cdn:
