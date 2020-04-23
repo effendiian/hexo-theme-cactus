@@ -1,0 +1,12 @@
+<% if (visible == true) { %>
+<section id="debug" style="display:none;">
+    <%= page.source %>
+    <br/>
+    <%= page.layout %>
+    <br/>
+    <% if (!is_post()) { %>
+        "Not a Post"
+    <% } %>
+    <br/>
+</section>
+<% } %>

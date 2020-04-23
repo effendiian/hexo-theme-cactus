@@ -1,0 +1,9 @@
+<li class="project-item">
+    <h2 class="project-title"><a id='<%= item.key %>' class="headerlink" href='#<%= key %>'><%= item.name %></a></h2>
+    <p class="project-subtitle"><a class="icon" target="_blank" href="<%= item.url %>">Go to Project <i class="fas fa-link"></i></a></p>
+    <br/>
+    <%- partial('_partial/project/thumbnail', { item: item }) %> 
+    <br/>
+    <p class="project-desc"><%- markdown(item.desc) %></p>
+</li>
+
