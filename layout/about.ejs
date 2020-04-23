@@ -1,0 +1,15 @@
+<section id="about">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="content" itemprop="articleBody">
+            <% if (site.data.about) { %>
+                <% for (var obj in site.data.about) { %>
+                    <% if(obj == "about") { %>
+                        <%- partial('_partial/about/about', { section: site.data.about[obj] }) %>
+                    <% } else { %>
+                        <%- partial('_partial/about/contact', { section: site.data.about[obj] }) %>
+                    <% } %>
+                <% } %>
+            <% } %>
+        </div>
+    </article>
+</section>

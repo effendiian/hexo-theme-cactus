@@ -1,1 +1,25 @@
-<a class="button" href='<%= url %>' title='<%= alt %>' ><%= content %></a>
+<style rel="style" type="text/css">
+    a.button {
+        text-align: center;
+        padding: 5px;
+        margin: 10px auto;
+        width: 150px;
+        border: 1px solid #c9cacc;
+        border-radius: 0px;
+    }
+
+    a.button:hover,
+    a.button:focus {
+        padding: 3px;
+        color: #d480aa;
+        border: 3px solid #d480aa;
+        border-radius: 5px 5px 5px 5px;
+        transition: 
+            color 0.3s ease,
+            padding 0.3s ease,
+            border 0.3s ease,
+            border-radius 0.3s ease;
+    }
+</style>
+
+<a class="button" href='<%= url %>' target="_blank"><%= content %></a>

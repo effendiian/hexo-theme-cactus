@@ -1,0 +1,40 @@
+<% if (site.data.about) { %>
+    <style rel="style" type="text/css">
+        p.tools {
+            margin: 0px auto;
+            padding: 0px;
+            text-align: center;
+        }
+        ul.tools {
+            max-width: 500px;
+            margin: 0px auto;
+            text-align: center;
+            padding: 5px;
+            list-style-type: none;
+            display: block;
+        }
+        li.tool {
+            margin: 0px;
+            padding-right: 10px;
+            display: inline-block;
+            border-right: 1px dotted #ddd;
+        }
+        li.tool:last-child {
+            border: 1px solid transparent;
+        }
+    </style>
+    <p class="tools">
+        <% if (typeof locals.message == 'undefined') { %>
+            I am familiar with the following tools:
+        <% } else { %>
+            <%= locals.message %>
+        <% } %>
+        <ul class="tools">
+            <% for (var about in site.data.about) { %>
+                <% for (var tool in site.data.about[about].tools) { %> 
+                    <%- partial('_partial/about/tool_link', { tool: site.data.about[about].tools[tool] }) %>
+                <% } %>
+            <% } %>
+        </ul>
+    </p>
+<% } %>

@@ -1,9 +1,11 @@
-<li class="project-item">
+<li class="project">
     <h2 class="project-title"><a id='<%= item.key %>' class="headerlink" href='#<%= key %>'><%= item.name %></a></h2>
-    <p class="project-subtitle"><a class="icon" target="_blank" href="<%= item.url %>">Go to Project <i class="fas fa-link"></i></a></p>
-    <br/>
-    <%- partial('_partial/project/thumbnail', { item: item }) %> 
-    <br/>
-    <p class="project-desc"><%- markdown(item.desc) %></p>
+    <p class="project">
+        <%- partial('_partial/project/thumbnail', { item: item }) %> 
+    </p>
+    <p class="project project-subtitle"><a class="button" target="_blank" href="<%= item.url %>">
+        <% if (typeof item.prompt == 'undefined') { %>Go to Project <% } else { %><%= item.prompt %> <% } %><i class="fas fa-link"></i></a>
+    </p>
+    <p class="project project-desc"><%= item.desc %></p>
 </li>
 

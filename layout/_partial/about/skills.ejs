@@ -1,0 +1,40 @@
+<% if (site.data.about) { %>
+    <style rel="style" type="text/css">
+        p.skills {
+            margin: 0px auto;
+            padding: 0px;
+            text-align: center;
+        }
+        ul.skills {
+            max-width: 500px;
+            margin: 0px auto;
+            text-align: center;
+            padding: 5px;
+            list-style-type: none;
+            display: block;
+        }
+        li.skill {
+            margin: 0px;
+            padding-right: 10px;
+            display: inline-block;
+            border-right: 1px dotted #ddd;
+        }
+        li.skill:last-child {
+            border: 1px solid transparent;
+        }
+    </style>
+    <p class="skills">
+        <% if (typeof locals.message == 'undefined') { %>
+            I am familiar with the following skills:
+        <% } else { %>
+            <%= locals.message %>
+        <% } %>
+        <ul class="skills">
+            <% for (var about in site.data.about) { %>
+                <% for (var skill in site.data.about[about].skills) { %> 
+                    <%- partial('_partial/about/skill_link', { skill: site.data.about[about].skills[skill] }) %>
+                <% } %>
+            <% } %>
+        </ul>
+    </p>
+<% } %>

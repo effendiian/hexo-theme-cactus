@@ -1,18 +1,117 @@
 <% if (site.data.projects) { %>
+    <% if (page.source === "projects/index.md") { %> 
+      <style rel="style" type="text/css">
+        ul.project-list {
+          margin: 0px auto;
+          text-align: center;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+        }
+
+        li.project {
+          color: #eeeeee;
+          margin: 15px;
+          padding: 5px 35px;
+          display: block;
+          min-width: 200px;
+          background: transparent;
+          border: 2px dotted #f1f1f180;
+          border-radius: 5px 5px 5px 5px;
+          transition: 
+            color 0.6s ease,
+            margin 0.6s ease,
+            padding 0.6s ease,
+            background 0.6s ease,
+            border 0.6s ease,
+            border-radius 0.6s ease;
+        }
+
+        li.project:hover,
+        li.project:focus,
+        li.project:active {
+          color: #212121;
+          padding: 5px 35px;
+          background: #2bbc8a;
+          border: 1px solid #2bbc8a;
+          border-radius: 10px 5px 15px 5px;
+        }
+
+        .project-title {
+          color: #2bbc8a;
+          font-size: 1.7em;
+          transition: 
+            color 0.6s ease;
+        }  
+        
+        li.project:hover .project-title,
+        li.project:focus  .project-title,
+        li.project:active  .project-title {
+          color: #eeeeee;
+        }
+
+        .project-title a.headerlink,
+        .project-title:hover a.headerlink,
+        .project-title a.headerlink:hover {
+          cursor: default;
+        }
+
+
+        img.project-thumbnail {
+          height:150px; width:150px;
+        }
+
+        img.project-thumbnail,
+        .project-subtitle,
+        .project-desc {
+          text-align: center;
+          display: block;
+          margin: 0px auto;
+        }
+        
+        .project-subtitle a {
+          margin: 5px;
+          padding: 5px;
+          color: #212121;
+          background: #ddd;
+          border: 1px solid #ddd;
+        }
+
+        .project-subtitle:hover a,
+        .project-subtitle:active a,
+        .project-subtitle:focus a {
+          background: transparent;
+          color: #ddd;
+        }
+
+        .project-desc {
+          margin: 5px;
+          padding-top: 10px;
+        }
+
+        .heading {
+          text-align: center;
+        }
+
+      </style>  
+    <% } %>
+
     <% if (page.source !== "projects/index.md") { %>
       <section id="projects">
       <h1><a href="<%- url_for("projects") %>"><%= __('index.projects') %></a></h1>
     <% } else { %>
-      <h1><a href="#projects" class="headerlink"><%= __('index.projects') %></a></h1>
+      <h1 class="heading"><a href="#projects" class="headerlink"><%= __('index.projects') %></a></h1>
     <% } %>
       <ul class="project-list">
-        <% for(var obj in site.data.projects){ %>
+        <% for(var project in site.data.projects){ %>
           <% if (page.source !== "projects/index.md") { %>
             <li class="project-item">
-              <a href="<%= site.data.projects[obj].url %>"><%= site.data.projects[obj].name %></a>: <%- markdown(site.data.projects[obj].desc) %>
+              <a href="<%= site.data.projects[project].url %>"><%= site.data.projects[project].name %></a>: <%- markdown(site.data.projects[project].desc) %>
             </li>
           <% } else { %>
-            <%- partial('_partial/project/item', { item: site.data.projects[obj], key: obj }) %>
+            <%- partial('_partial/project/item', { item: site.data.projects[project], key: project }) %>
           <% } %>
         <% } %>
       </ul>

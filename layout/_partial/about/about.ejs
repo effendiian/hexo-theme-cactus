@@ -1,0 +1,50 @@
+<style rel="style" type="text/css">
+    img.profile {
+        height: 430px;
+        width: 430px;
+    }
+    p.subtitle {
+        text-align: center;
+    }
+    p.content {
+        margin: 15px auto;
+        text-align: left;
+    }
+    p.profile {
+        margin: 0px auto;
+        text-align: justify;
+    }
+    ul.profile {
+        margin: 0px auto;
+        padding: 0px;
+        text-decoration: none;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+    }
+    li.skill {
+        margin: 2px auto;
+        padding: 0px 5px;
+        display: block;
+        border-right: 1px dotted #ddd;
+    }
+    li.skill:last-child {
+        border: 1px solid transparent;
+    }
+
+</style>
+<h1 style="text-align:center;"><%- section.subtitle %></h1>
+<p>
+    <img class="profile" src="<%= section.img.src %>" alt="<%= section.img.alt %>" />
+</p>
+<p class="content"><%- section.content %></p>
+<%- partial('_partial/about/skills', { message: "" }) %>
+<%- partial('_partial/about/tools', { message: "" }) %>
+<%- partial('_partial/buttonlink', {
+    url: "/projects",
+    content: "My Projects"
+}) %>
+<%- partial('_partial/buttonlink', {
+    url: section.resume.url,
+    content: section.resume.alt
+}) %>
