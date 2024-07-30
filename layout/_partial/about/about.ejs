@@ -42,6 +42,7 @@
 <p>
   <img class="profile" src="<%= section.img.src %>" alt="<%= section.img.alt %>" />
 </p>
+<%- partial('_partial/about/socials') %>
 <%- partial('_partial/about/skills', { message: "" }) %>
 <%- partial('_partial/about/tools', { message: "" }) %>
 <p class="content"><%- page.content %></p>
