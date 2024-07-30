@@ -143,7 +143,8 @@
       <% var item = {
         id,
         url: project.url,
-        permalink: post.permalink,
+        date: post.date,
+        permalink: url_for(post.path),
         name: post.title,
         title: project.title,
         description: project.description ?? project.desc ?? `A project I worked on.`,

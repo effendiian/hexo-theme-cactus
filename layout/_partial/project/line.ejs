@@ -1,10 +1,27 @@
+<style rel="style" type="text/css">
+    .project-line {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .project-line div {
+        display: block;
+        margin-right: 16px;
+        min-width: 100px;
+        font-size: 14px;
+    }
+</style>
+
 <li class="project project-line">
-    <span class="project-title">
+    <div class="dt-published">
+        <%- item.date.format('YYYY MMMM') %>
+    </div>
+    <div class="project-title">
         <a href="<%= item.url %>">
             <%= item.title %> <i class="fa-solid fa-external-link"></i>
         </a>
-    </span>:
-    <span class="project-permalink">
-        <a href="<%= item.permalink %>" target="_blank"><i class="fa-solid fa-project-diagram"></i> <%= truncate(item.name, { length: 30, separator: ' ' })%></a>
-    </span>
+    </div>
+    <div class="project-permalink">
+       <a href="<%= item.permalink %>" target="_blank"><i class="fa-solid fa-project-diagram"></i> <%= truncate(item.name, { length: 30, separator: ' ' })%></a>
+    </div>
 </li>
