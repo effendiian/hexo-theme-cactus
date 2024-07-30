@@ -1,11 +1,3 @@
 <section id="projects">
-  <% var field_sort = theme.posts_overview.sort_updated ? 'updated' : 'date' %>
-  <% var site_projects = site.posts.sort(field_sort, 'desc').filter(function (post) { return post.project == true }) %>
-  <% var project_count = site_projects?.length ?? 0 %>
-  <div class="project-list-title">
-    <%- _p('counter.projects', project_count) %>
-  </div>
-  <% if (project_count) { %>
   <%- partial('_partial/project/list') %>
-  <% } %>
 </section>

@@ -1,5 +1,5 @@
-<% if (typeof item == 'undefined') { %>
-    <img class="project-thumbnail" src="https://via.placeholder.com/150" alt="Missing Project Thumbnail" />
+<% if (item && item.img && item.img.src) { %>
+    <img class="project-thumbnail" src="<%= item.img.src %>" alt="<%= item.img.alt ?? item.title %>" />
 <% } else { %>
-    <img class="project-thumbnail" src="<%= item.img.src %>" alt="<%= item.img.alt %>" />
+    <img class="project-thumbnail" src="https://via.placeholder.com/150" alt="Missing Project Thumbnail" />
 <% } %>

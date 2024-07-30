@@ -42,9 +42,7 @@
 
 <% var field_sort = theme.posts_overview.sort_updated ? 'updated' : 'date' %>
 <% var site_posts = site.posts.sort(field_sort, 'desc') %>
-<% var site_projects = site_posts.filter(function (post) { post.project == true }) %>
 <% var post_count = site_posts?.length ?? 0 %>
-<% var project_count = site_projects?.length ?? 0 %>
 
 <section id="writing">
   <span class="h1"><a href="<%- url_for(theme.nav.articles) %>"><%= __('index.articles') %></a></span>
@@ -76,13 +74,6 @@
   <% } %>
 </section>
 
-<% if (project_count) { %>
-<%- partial('_partial/projects/list') %>
-<% } else { %>
 <section id="projects">
-  <h1><a href="<%- url_for("projects") %>"><%= __('index.projects') %></a></h1>
-  <div class="project-list-title">
-    <%- _p('counter.projects', project_count) %>
-  </div>
+  <%- partial('_partial/project/list') %>
 </section>
-<% } %>

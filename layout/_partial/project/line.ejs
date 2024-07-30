@@ -1,0 +1,10 @@
+<li class="project project-line">
+    <span class="project-title">
+        <a href="<%= item.url %>">
+            <%= item.title %> <i class="fa-solid fa-external-link"></i>
+        </a>
+    </span>:
+    <span class="project-permalink">
+        <a href="<%= item.permalink %>" target="_blank"><i class="fa-solid fa-project-diagram"></i> <%= truncate(item.name, { length: 30, separator: ' ' })%></a>
+    </span>
+</li>
