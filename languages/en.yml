@@ -61,6 +61,11 @@ counter:
     one: ""
     other: ""
 
+  projects:
+    zero: No projects
+    one: ""
+    other: ""
+
 comments:
   no_js: Please enable JavaScript to view the comments.
 

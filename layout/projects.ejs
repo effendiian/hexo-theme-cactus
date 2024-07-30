@@ -1,3 +1,14 @@
 <section id="projects">
+    <div class="project-list-title">
+      <% var visibleProjects = 0 %>
+      <% if (site.data.about) { %>
+        <% site.data.projects.each(function(project){ %>
+            <% if (project.length) { %>
+                <% visibleProjects += 1 %>
+            <% } %>
+        <% }) %>
+      <% } %>
+      <%- _p('counter.projects', visibleProjects) %>
+    </div>
     <%- partial('_partial/project/list') %>    
 </section>
