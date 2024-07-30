@@ -1,137 +1,134 @@
-<% if (site.data.projects) { %>
-    <% if (page.source === "projects/index.md") { %> 
-      <style rel="style" type="text/css">
-        ul.project-list {
-          margin: 0px auto;
-          text-align: center;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-        }
+    <% if (page.source === "projects/index.md") { %>
+    <style rel="style" type="text/css">
+      ul.project-list {
+        margin: 0px auto;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
 
-        li.project {
-          color: #eeeeee;
-          margin: 10px;
-          padding: 5px 25px;
-          display: block;
-          min-width: 150px;
-          background: transparent;
-          border: 2px dotted #f1f1f180;
-          border-radius: 5px 5px 5px 5px;
-          transition: 
-            color 0.6s ease,
-            margin 0.6s ease,
-            padding 0.6s ease,
-            background 0.6s ease,
-            border 0.6s ease,
-            border-radius 0.6s ease;
-        }
+      li.project {
+        color: #eeeeee;
+        margin: 10px;
+        padding: 5px 25px;
+        display: block;
+        min-width: 150px;
+        background: transparent;
+        border: 2px dotted #f1f1f180;
+        border-radius: 5px 5px 5px 5px;
+        transition:
+          color 0.6s ease,
+          margin 0.6s ease,
+          padding 0.6s ease,
+          background 0.6s ease,
+          border 0.6s ease,
+          border-radius 0.6s ease;
+      }
 
-        li.project:hover,
-        li.project:focus,
-        li.project:active {
-          color: #212121;
-          padding: 5px 25px;
-          background: #2bbc8a;
-          border: 1px solid #2bbc8a;
-          border-radius: 10px 5px 15px 5px;
-        }
+      li.project:hover,
+      li.project:focus,
+      li.project:active {
+        color: #212121;
+        padding: 5px 25px;
+        background: #2bbc8a;
+        border: 1px solid #2bbc8a;
+        border-radius: 10px 5px 15px 5px;
+      }
 
-        .project-title {
-          max-width: 250px;
-          margin: 5px auto;
-          text-align: center;
-          color: #2bbc8a;
-          font-size: 1.2em;
-          transition: 
-            color 0.6s ease;
-        }  
-        
-        li.project:hover .project-title,
-        li.project:focus  .project-title,
-        li.project:active  .project-title {
-          color: #eeeeee;
-        }
+      .project-title {
+        max-width: 250px;
+        margin: 5px auto;
+        text-align: center;
+        color: #2bbc8a;
+        font-size: 1.2em;
+        transition:
+          color 0.6s ease;
+      }
 
-        .project-title a.headerlink,
-        .project-title:hover a.headerlink,
-        .project-title a.headerlink:hover {
-          cursor: default;
-        }
+      li.project:hover .project-title,
+      li.project:focus .project-title,
+      li.project:active .project-title {
+        color: #eeeeee;
+      }
+
+      .project-title a.headerlink,
+      .project-title:hover a.headerlink,
+      .project-title a.headerlink:hover {
+        cursor: default;
+      }
 
 
-        img.project-thumbnail {
-          max-height:200px;
-          max-width:200px;
-          min-height:150px;
-          min-width:150px;
-          transition:
-            max-width 1s ease,
-            max-height 1s ease;
-        }
+      img.project-thumbnail {
+        max-height: 200px;
+        max-width: 200px;
+        min-height: 150px;
+        min-width: 150px;
+        transition:
+          max-width 1s ease,
+          max-height 1s ease;
+      }
 
-        img.project-thumbnail:hover {
-          max-height:300px;
-          max-width:300px;
-        }
+      img.project-thumbnail:hover {
+        max-height: 300px;
+        max-width: 300px;
+      }
 
-        img.project-thumbnail,
-        .project-subtitle,
-        .project-desc {
-          text-align: center;
-          display: block;
-          margin: 0px auto;
-        }
-        
-        .project-subtitle a {
-          margin: 10px;
-          padding: 7px;
-          color: #212121;
-          background: #ddd;
-          border: 1px solid #ddd;
-          border-radius: 2px;
-        }
+      img.project-thumbnail,
+      .project-subtitle,
+      .project-desc {
+        text-align: center;
+        display: block;
+        margin: 0px auto;
+      }
 
-        .project-subtitle:hover a,
-        .project-subtitle:active a,
-        .project-subtitle:focus a {
-          background: transparent;
-          color: #ddd;
-        }
+      .project-subtitle a {
+        margin: 10px;
+        padding: 7px;
+        color: #212121;
+        background: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+      }
 
-        .project-desc {
-          margin: 5px auto;
-          padding-top: 10px;
-          max-width: 200px;
-        }
+      .project-subtitle:hover a,
+      .project-subtitle:active a,
+      .project-subtitle:focus a {
+        background: transparent;
+        color: #ddd;
+      }
 
-        .heading {
-          text-align: center;
-        }
+      .project-desc {
+        margin: 5px auto;
+        padding-top: 10px;
+        max-width: 200px;
+      }
 
-      </style>  
+      .heading {
+        text-align: center;
+      }
+    </style>
     <% } %>
 
     <% if (page.source !== "projects/index.md") { %>
-      <section id="projects">
+    <section id="projects">
       <h1><a href="<%- url_for("projects") %>"><%= __('index.projects') %></a></h1>
-    <% } else { %>
+      <% } else { %>
       <h1 class="heading"><a href="#projects" class="headerlink"><%= __('index.projects') %></a></h1>
-    <% } %>
+      <% } %>
       <ul class="project-list">
         <% for(var project in site.data.projects){ %>
-          <% if (page.source !== "projects/index.md") { %>
-            <li class="project-item">
-              <a href="<%= site.data.projects[project].url %>"><%= site.data.projects[project].name %></a>: <%- markdown(site.data.projects[project].desc) %>
-            </li>
-          <% } else { %>
-            <%- partial('_partial/project/item', { item: site.data.projects[project], key: project }) %>
-          <% } %>
+        <% if (page.source !== "projects/index.md") { %>
+        <li class="project-item">
+          <a href="<%= site.data.projects[project].url %>"><%= site.data.projects[project].name %></a>: <%- markdown(site.data.projects[project].desc) %>
+        </li>
+        <% } else { %>
+        <%- partial('_partial/project/item', { item: site.data.projects[project], key: project }) %>
+        <% } %>
         <% } %>
       </ul>
-    <% if (page.source !== "projects/index.md") { %>
-      </section>
+      <% if (page.source !== "projects/index.md") { %>
+    </section>
     <% } %>
-<% } %>

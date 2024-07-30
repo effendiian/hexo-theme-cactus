@@ -61,6 +61,11 @@ counter:
     one: ""
     other: ""
 
+  visible_posts:
+    zero: No posts.
+    one: "visible post"
+    other: "visible posts"
+
   projects:
     zero: No projects
     one: ""

@@ -42,15 +42,6 @@
 <p>
   <img class="profile" src="<%= section.img.src %>" alt="<%= section.img.alt %>" />
 </p>
-<p class="content"><%- section.content %></p>
 <%- partial('_partial/about/skills', { message: "" }) %>
 <%- partial('_partial/about/tools', { message: "" }) %>
-<%- partial('_partial/buttonlink', {
-    url: "/projects",
-    content: "My Projects"
-}) %>
-<%- partial('_partial/buttonlink', {
-    url: section.resume.url,
-    content: section.resume.alt
-}) %>
-<%- partial('_partial/google_form') %>
+<p class="content"><%- page.content %></p>

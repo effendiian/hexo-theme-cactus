@@ -1,4 +1,4 @@
-<% if (site.data.about) { %>
+<% if (site.data.about?.enabled && site.data.about.skills?.enabled) { %>
     <style rel="style" type="text/css">
         p.skills {
             margin: 0px auto;
@@ -30,10 +30,8 @@
             <%= locals.message %>
         <% } %>
         <ul class="skills">
-            <% for (var about in site.data.about) { %>
-                <% for (var skill in site.data.about[about].skills) { %> 
-                    <%- partial('_partial/about/skill_link', { skill: site.data.about[about].skills[skill] }) %>
-                <% } %>
+            <% for (var skill in site.data.about.skills.list) { %> 
+                <%- partial('_partial/about/skill_link', { skill: site.data.about.skills.list[skill] }) %>
             <% } %>
         </ul>
     </p>

@@ -1,4 +1,4 @@
-<% if (site.data.about) { %>
+<% if (site.data.about?.enabled && site.data.about.tools?.enabled) { %>
     <style rel="style" type="text/css">
         p.tools {
             margin: 0px auto;
@@ -30,10 +30,8 @@
             <%= locals.message %>
         <% } %>
         <ul class="tools">
-            <% for (var about in site.data.about) { %>
-                <% for (var tool in site.data.about[about].tools) { %> 
-                    <%- partial('_partial/about/tool_link', { tool: site.data.about[about].tools[tool] }) %>
-                <% } %>
+            <% for (var tool in site.data.about.tools.list) { %> 
+                <%- partial('_partial/about/tool_link', { tool: site.data.about.tools.list[tool] }) %>
             <% } %>
         </ul>
     </p>

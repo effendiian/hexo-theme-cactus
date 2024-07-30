@@ -1,14 +1,11 @@
 <section id="projects">
-    <div class="project-list-title">
-      <% var visibleProjects = 0 %>
-      <% if (site.data.about) { %>
-        <% site.data.projects.each(function(project){ %>
-            <% if (project.length) { %>
-                <% visibleProjects += 1 %>
-            <% } %>
-        <% }) %>
-      <% } %>
-      <%- _p('counter.projects', visibleProjects) %>
-    </div>
-    <%- partial('_partial/project/list') %>    
+  <% var field_sort = theme.posts_overview.sort_updated ? 'updated' : 'date' %>
+  <% var site_projects = site.posts.sort(field_sort, 'desc').filter(function (post) { return post.project == true }) %>
+  <% var project_count = site_projects?.length ?? 0 %>
+  <div class="project-list-title">
+    <%- _p('counter.projects', project_count) %>
+  </div>
+  <% if (project_count) { %>
+  <%- partial('_partial/project/list') %>
+  <% } %>
 </section>
