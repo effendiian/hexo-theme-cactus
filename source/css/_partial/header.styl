@@ -28,7 +28,8 @@
     border-radius: 5px
     background-size: $logo-width $logo-height
     background-repeat: no-repeat
-    if $logo-grayout
+
+    if ($logo-grayout)
       filter: grayscale(100%)
       -webkit-filter: grayscale(100%)
 
@@ -55,8 +56,8 @@
       li
         display: inline-block
         margin-right: 15px
-        border-right: 1px dotted
         border-color: $color-accent-1
+        border-right: 1px dotted
         vertical-align: middle
 
       .icon
@@ -69,7 +70,7 @@
         a
           margin-right: 0
 
-if $logo-grayout
+if ($logo-grayout)
   #header:hover
     #logo
       filter: none
@@ -80,6 +81,7 @@ if $logo-grayout
     display: table
     margin-right: 5rem
     min-height: $logo-height
+
     h1
       display: table-cell
       vertical-align: middle
@@ -103,8 +105,8 @@ if $logo-grayout
     ul.responsive
       li
         display: block
-    
-    ul 
+
+    ul
       a[aria-label="Menu"]
         display: inline-block
         min-width: 48px
