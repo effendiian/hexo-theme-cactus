@@ -2,8 +2,8 @@ nav:
   home: Home
   about: About
   articles: Writing
-  tag: Tag
-  category: Category
+  tags: Tags
+  categories: Categories
   projects: Projects
   search: Search
 
