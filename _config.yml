@@ -186,6 +186,16 @@ utterances:
   label: Comment
   theme: github-dark
 
+# Fill in embed information for a Google Form.
+google_form:
+  enabled: true
+  id: 1FAIpQLSeHGdothCLtGVbD-iWilaCehtRv5CzSxkUy3sa7dVUhpFLdqQ
+  height: 720
+  width: 1140
+  frameborder: 0
+  marginheight: 0
+  marginwidth: 0
+
 # Fill in your Google Analytics tracking ID to enable Google Analytics.
 google_analytics:
   enabled: false

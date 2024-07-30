@@ -1,0 +1,12 @@
+<!-- Google Form Embed -->
+<% if (theme.google_form.enabled && theme.google_form.id){ %>
+<iframe
+    src="https://docs.google.com/forms/d/e/<%= theme.google_form.id %>/viewform?embedded=true"
+    width="<%= theme.google_form.width %>" 
+    height="<%= theme.google_form.height %>" 
+    frameborder="<%= theme.google_form.frameborder %>" 
+    marginheight="<%= theme.google_form.marginheight %>" 
+    marginwidth="<%= theme.google_form.marginwidth %>">
+    Loading…
+</iframe>
+<% } %>
