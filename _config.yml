@@ -38,21 +38,21 @@ social_links:
     icon: twitter
     link: https://twitter.com/thelionsredmane
   -
-    icon: facebook
-    link: https://www.facebook.com/effendiian
-  - 
-    icon: instagram
-    link: https://instagram.com/thelionsredmane
-  -
     icon: linkedin
     link: http://linkedin.com/in/effendiian
-  -
-    icon: mail
-    link: mailto:effendiian@gmail.com
   -
     icon: mastodon
     label: masto.nyc
     link: https://masto.nyc/@effendiian
+  # -
+  #   icon: facebook
+  #   link: https://www.facebook.com/effendiian
+  # - 
+  #   icon: instagram
+  #   link: https://instagram.com/thelionsredmane
+  # -
+  #   icon: mail
+  #   link: mailto:effendiian@gmail.com
 
 # Customize the overview with displaying a tagcloud on the index page.
 # Options: https://hexo.io/docs/helpers.html#tagcloud
