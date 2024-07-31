@@ -169,6 +169,11 @@ open_graph:
 # Plugins
 ##############################################################################
 
+# License Badges
+license:
+  licenseType: by
+  licenseIconSize: small
+
 # Enable MathJax support for Latex
 mathjax:
   enabled: false

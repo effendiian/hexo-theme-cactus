@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-cactus",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "A responsive, clean and simple theme for Hexo.",
   "main": "index.js",
   "scripts": {
@@ -41,6 +41,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "*",
     "clipboard": "^2.0.4",
+    "hexo-global-license": "^0.5.5",
     "jquery": "^3.3.1",
     "justifiedGallery": "^3.6.5",
     "vazir-font": "*"
